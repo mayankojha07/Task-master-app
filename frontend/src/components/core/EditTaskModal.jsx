@@ -46,9 +46,9 @@ const EditTaskModal = ({ task, setShowModal }) => {
   };
   return (
     <>
-      <div className="fixed overflow-auto -top-20 left-0 right-0 bottom-0 z-[999] bg-white/80 flex justify-center items-center">
-        <div className="my-20 mt-96 w-[96%] md:w-[70%] lg:w-[60%] flex flex-col gap-y-6 bg-white shadow p-4 md:p-8 rounded-lg">
-          <div className="flex flex-row gap-8 justify-between items-center">
+      <div className="fixed overflow-auto -top-20 left-0 right-0 bottom-0 z-[999] flex items-center justify-center bg-black bg-opacity-70">
+        <div className="relative my-20 mt-80 w-[90%] max-w-lg md:max-w-2xl lg:max-w-3xl bg-white rounded-lg shadow-lg">
+          <div className="flex justify-between items-center p-4 border-b">
             <h4 className="text-xl md:text-2xl font-semibold">{"Edit Task"}</h4>
             <IoCloseOutline
               fontSize={25}
@@ -57,7 +57,7 @@ const EditTaskModal = ({ task, setShowModal }) => {
             />
           </div>
 
-          <form onSubmit={onSubmitHandler} className="space-y-4">
+          <form onSubmit={onSubmitHandler} className="p-4 space-y-4">
             <div className="flex flex-col gap-1">
               <label htmlFor="title" className="text-lg font-medium">
                 Title
@@ -67,7 +67,7 @@ const EditTaskModal = ({ task, setShowModal }) => {
                 id="title"
                 name="title"
                 placeholder="Title"
-                className="w-full text-base sm:text-lg px-3 sm:px-4 py-3 bg-[#eeeeee] text-black rounded-md outline-none"
+                className="w-full text-base px-4 py-3 bg-gray-100 text-black rounded-md outline-none"
                 value={taskData.title}
                 onChange={onChangeHandler}
               />
@@ -82,7 +82,7 @@ const EditTaskModal = ({ task, setShowModal }) => {
                 id="assignedToEmail"
                 name="assignedToEmail"
                 placeholder="Email"
-                className="w-full text-base sm:text-lg px-3 sm:px-4 py-3 bg-[#eeeeee] text-black rounded-md outline-none"
+                className="w-full text-base px-4 py-3 bg-gray-100 text-black rounded-md outline-none"
                 value={taskData.assignedToEmail}
                 onChange={onChangeHandler}
               />
@@ -96,7 +96,7 @@ const EditTaskModal = ({ task, setShowModal }) => {
                 name="dueDate"
                 id="dueDate"
                 placeholder="Due Date"
-                className="w-full text-base sm:text-lg px-3 sm:px-4 py-3 bg-[#eeeeee] text-black rounded-md outline-none"
+                className="w-full text-base px-4 py-3 bg-gray-100 text-black rounded-md outline-none"
                 value={taskData.dueDate}
                 onChange={onChangeHandler}
               />
@@ -110,7 +110,7 @@ const EditTaskModal = ({ task, setShowModal }) => {
               <select
                 name="priority"
                 id="priority"
-                className="w-full text-base sm:text-lg px-3 sm:px-4 py-3 bg-[#eeeeee] text-black rounded-md outline-none"
+                className="w-full text-base px-4 py-3 bg-gray-100 text-black rounded-md outline-none"
                 onChange={onChangeHandler}
                 defaultValue={taskData.priority}
               >
@@ -130,14 +130,14 @@ const EditTaskModal = ({ task, setShowModal }) => {
                 name="description"
                 id="description"
                 placeholder="Description"
-                className="w-full text-base sm:text-lg px-3 sm:px-4 py-3 bg-[#eeeeee] text-black rounded-md outline-none"
+                className="w-full text-base px-4 py-3 bg-gray-100 text-black rounded-md outline-none"
                 rows={4}
                 value={taskData.description}
                 onChange={onChangeHandler}
               />
             </div>
 
-            <div className="w-full flex gap-x-4 justify-end items-center">
+            <div className="flex gap-x-4 justify-end items-center">
               <AuthBtn
                 text={"Cancel"}
                 onclick={() => {
